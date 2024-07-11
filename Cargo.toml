@@ -1,0 +1,10 @@
+[package]
+name = "wasmtime-dl"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libloader = "0.1.4"
+wasmtime = "22.0.0"
