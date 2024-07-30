@@ -6,5 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-libloader = "0.1.4"
+bytemuck = "1.16.1"
+libloading = "0.8.5"
+thiserror = "1.0.63"
+wasmparser = "0.214.0"
 wasmtime = "22.0.0"
