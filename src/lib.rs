@@ -52,7 +52,6 @@ impl ParamType {
 }
 
 pub unsafe fn bind(
-    engine: &Engine,
     linker: &mut Linker<()>,
     module: &str,
     name: &str,
@@ -60,6 +59,6 @@ pub unsafe fn bind(
     params: &[ParamType],
     returns: Option<ParamType>,
 ) {
-    let ty = FuncType::new(engine, params.iter().map(|p| p.val()), []);
+    let ty = FuncType::new(linker.engine(), params.iter().map(|p| p.val()), []);
     bind::bind(linker, module, name, lib, ty, params, returns);
 }

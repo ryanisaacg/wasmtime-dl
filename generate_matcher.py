@@ -1,7 +1,7 @@
 import itertools
 
 def generate_case(params, return_ty):
-    param_match = ", ".join(["t%d @ (ParamType::I32 | ParamType::F32 | ParamType::Pointer)" % (idx,) if param == "32" else "t%d @ (ParamType::I64 | ParamType::F64)" % (idx,) for (idx, param) in enumerate(params)])
+    param_match = ", ".join(["t%d @ (ParamType::I32 | ParamType::F32)" % (idx,) if param == "32" else "t%d @ (ParamType::I64 | ParamType::F64 | ParamType::Pointer)" % (idx,) for (idx, param) in enumerate(params)])
     param_ty = ", ".join(["i" + x for x in params])
     if return_ty == None:
         return_ty = ""
