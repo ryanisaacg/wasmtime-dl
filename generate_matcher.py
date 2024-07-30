@@ -33,7 +33,7 @@ for ty in types:
 return_types.append(None)
 
 body = ""
-for arg_count in range(8):
+for arg_count in range(9):
     possible_args = itertools.product(types, repeat = arg_count)
     for args in possible_args:
         for return_ty in return_types:
