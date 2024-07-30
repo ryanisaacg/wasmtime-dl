@@ -16,9 +16,9 @@ def generate_case(params, return_ty):
     param_list = ", ".join(["arg_i%s(&_args[%d], &mut _cal, t%d)" % (params[i], i, i) for i in range(len(params))])
     return """([%s], %s) => {
     let func: Symbol<unsafe extern "C" fn(%s)%s> =
-        lib.get(name.as_bytes()).unwrap();
+        lib.get(lib_name).unwrap();
     %s
-    linker.func_new_unchecked(module, name, ty, move |mut _cal, _args| {
+    linker.func_new_unchecked(module, wasm_name, ty, move |mut _cal, _args| {
         func(%s);
         Ok(())
     }).unwrap();

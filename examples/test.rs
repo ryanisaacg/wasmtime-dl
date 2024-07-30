@@ -14,6 +14,7 @@ fn main() {
             "bindings",
             "print",
             library,
+            "print".as_bytes(),
             &[ParamType::F32],
             None,
         )
@@ -24,6 +25,7 @@ fn main() {
             "bindings",
             "incr",
             library,
+            "incr".as_bytes(),
             &[ParamType::Pointer],
             None,
         )

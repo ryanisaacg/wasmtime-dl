@@ -56,9 +56,10 @@ pub unsafe fn bind(
     module: &str,
     name: &str,
     lib: &'static Library,
+    lib_name: &[u8],
     params: &[ParamType],
     returns: Option<ParamType>,
 ) {
     let ty = FuncType::new(linker.engine(), params.iter().map(|p| p.val()), []);
-    bind::bind(linker, module, name, lib, ty, params, returns);
+    bind::bind(linker, module, name, lib, lib_name, ty, params, returns);
 }
